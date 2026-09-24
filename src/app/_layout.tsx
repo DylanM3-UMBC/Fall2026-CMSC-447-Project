@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6d4082375d77ea008c323dfcc1429e10469de864
 import { Stack, useRouter } from "expo-router";
 import { useEffect } from "react";
 
@@ -17,6 +20,7 @@ export default function RootLayout() {
       <Stack.Screen name="(tabs)" />
       <Stack.Screen name="(auth)" />
     </Stack>
+<<<<<<< HEAD
 =======
 import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -35,5 +39,7 @@ export default function TabLayout() {
       <AppTabs />
     </ThemeProvider>
 >>>>>>> ff953e0 (Initial commit)
+=======
+>>>>>>> 6d4082375d77ea008c323dfcc1429e10469de864
   );
 }

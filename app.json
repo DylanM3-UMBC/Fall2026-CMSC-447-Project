@@ -1,6 +1,9 @@
 {
   "expo": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6d4082375d77ea008c323dfcc1429e10469de864
     "name": "my-app",
     "slug": "my-app",
     "version": "1.0.0",
@@ -14,6 +17,7 @@
         "NSPhotoLibraryUsageDescription": "We need access to your photo library so you can choose photos to upload.",
         "NSCameraUsageDescription": "We need access to your camera so you can take photos."
       }
+<<<<<<< HEAD
 =======
     "name": "new-app",
     "slug": "new-app",
@@ -25,6 +29,8 @@
     "ios": {
       "icon": "./assets/expo.icon"
 >>>>>>> ff953e0 (Initial commit)
+=======
+>>>>>>> 6d4082375d77ea008c323dfcc1429e10469de864
     },
     "android": {
       "adaptiveIcon": {
@@ -34,11 +40,16 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
 <<<<<<< HEAD
+<<<<<<< HEAD
       "predictiveBackGestureEnabled": false,
       "permissions": ["CAMERA", "READ_MEDIA_IMAGES"]
 =======
       "predictiveBackGestureEnabled": false
 >>>>>>> ff953e0 (Initial commit)
+=======
+      "predictiveBackGestureEnabled": false,
+      "permissions": ["CAMERA", "READ_MEDIA_IMAGES"]
+>>>>>>> 6d4082375d77ea008c323dfcc1429e10469de864
     },
     "web": {
       "output": "static",

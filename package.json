@@ -1,5 +1,8 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6d4082375d77ea008c323dfcc1429e10469de864
   "name": "my-app",
   "main": "expo-router/entry",
   "version": "1.0.0",
@@ -19,6 +22,7 @@
     "expo-symbols": "~57.0.2",
     "expo-system-ui": "~57.0.3",
     "expo-web-browser": "~57.0.2",
+<<<<<<< HEAD
 =======
   "name": "new-app",
   "main": "expo-router/entry",
@@ -39,6 +43,8 @@
     "expo-system-ui": "~57.0.4",
     "expo-web-browser": "~57.0.3",
 >>>>>>> ff953e0 (Initial commit)
+=======
+>>>>>>> 6d4082375d77ea008c323dfcc1429e10469de864
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-native": "0.86.3",

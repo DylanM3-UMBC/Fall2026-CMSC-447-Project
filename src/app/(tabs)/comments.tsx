@@ -11,7 +11,7 @@ export default function SearchBarPlaceholderExample() {
         <TextInput style={{width: '85%'}} placeholder={'Search Message...'} />
         <TouchableOpacity>
           <Image 
-          source={require('../../assets/images/googlesearchicon.png')} 
+          source={require('../../../assets/images/googlesearchicon.png')} 
           style={{width: 30, height: 30}} 
           />
         </TouchableOpacity>

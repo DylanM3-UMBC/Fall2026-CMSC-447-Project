@@ -1,14 +1,53 @@
+import { Image } from "expo-image";
+import * as ImagePicker from "expo-image-picker";
 import { useState } from "react";
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function onBoardingScreen() {
     const [name, setName] = useState("");
     const [username, setUsername] = useState("");
+    const [profileImage, setProfileImage] = useState<string | null>(null);
 
-    const handleComplete = () => {
-
+    const pickImage = async () => {
+        const {status} = await ImagePicker.requestMediaLibraryPermissionsAsync()
+        if (status !== "granted") {
+            Alert.alert("Permission needed", "We need camera roll permissions to select a profile image.");
+            return;
+        }
+        const result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ["images"],
+            allowsEditing: true,
+            aspect: [1,1],
+            quality: 0.8,
+        })
+        if (!result.canceled && result.assets[0]) {
+            setProfileImage(result.assets[0].uri);
+        }
     }
+    const takePhoto = async () => {
+        const {status} = await ImagePicker.requestCameraPermissionsAsync()
+        if (status !== "granted") {
+            Alert.alert("Permission needed", "We need camera permissions to take a photo.");
+            return;
+        }
+        const result = await ImagePicker.launchCameraAsync({
+            allowsEditing: true,
+            aspect: [1,1],
+            quality: 0.8,
+        })
+        if (!result.canceled && result.assets[0]) {
+            setProfileImage(result.assets[0].uri);
+        }
+    }
+    const showImagePicker = () => {
+        Alert.alert("Select Profile Image", "Choose an option",[
+            {text: "Camera", onPress: takePhoto },
+            {text: "Photo Library", onPress: pickImage},
+            {text: "Cancel", style: "cancel"}
+        ]);
+    }
+    const handleComplete = () => {}
 
     return (
         <SafeAreaView edges={["top", "bottom", "right", "left"]} style={styles.container}>
@@ -19,10 +58,13 @@ export default function onBoardingScreen() {
                 </View>
 
                 <View style={styles.form}>
-                    <TouchableOpacity style={styles.imageContainer}>
-                        <View style={styles.placeholderImage}>
-                            <Text style={styles.placeholderText}>+</Text>
-                        </View>
+                    <TouchableOpacity style={styles.imageContainer} onPress={showImagePicker}>
+                        {profileImage ? (<Image source={{uri: profileImage}} style={styles.profileImage} />) : ( 
+                            <View style={styles.placeholderImage}>
+                                <Text style={styles.placeholderText}>+</Text>
+                            </View>
+                        )} 
+                       
                         <View style={styles.editBadge}>
                             <Text style={styles.editText}>Edit</Text>
                         </View>
@@ -91,8 +133,15 @@ const styles = StyleSheet.create({
         marginBottom: 32,
         position: "relative",
     },
+    profileImage: {
+        right: -95,
+        width: 120,
+        height: 120,
+        borderRadius: 60,
+        backgroundColor: "#f5f5f5",
+    },
     placeholderImage: {
-        right: -85,
+        right: -95,
         width: 120,
         height: 120,
         backgroundColor: "#f5f5f5",

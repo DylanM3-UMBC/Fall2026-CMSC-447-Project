@@ -6,14 +6,14 @@ export default function RootLayout() {
   // let isAuth = false;
   // useEffect(() => {
   //   if(!isAuth){
-  //     router.replace("/(auth)/login");
+  //     router.replace("/(tabs)/index");
   //   }
   // })
 
   return (
     <Stack screenOptions ={{  headerShown: false  }}>
       <Stack.Screen name="(tabs)" options={{orientation: 'landscape' }} />
-      <Stack.Screen name="(auth)" options={{orientation: 'landscape' }} />
+      <Stack.Screen name="(auth)" options={{orientation: 'portrait' }} />
     </Stack>
   );
 }
